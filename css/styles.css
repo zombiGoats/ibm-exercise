@@ -1,0 +1,287 @@
+/*** IBM Challenge ***/
+/* VARIABLES 
+--------------------------------------------------------------*/
+/*** IBM Exercise Colors ***/
+/** PRIMARY COLORS **/
+/** SECONDARY COLORS **/
+/* MIXINS
+--------------------------------------------------------------*/
+/* TYPOGRAPHY
+--------------------------------------------------------------*/
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+}
+
+/* ELEMENTS
+--------------------------------------------------------------*/
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit;
+}
+
+body {
+  background: #fff;
+  /* Fallback for when there is no custom background color defined. */
+  font-weight: 400;
+  height: 100%;
+  position: relative;
+  font-family: "Oswald", arial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+blockquote, q {
+  quotes: "" "";
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+}
+
+hr {
+  background-color: #001135;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+button,
+.btn,
+#content button,
+#content .btn {
+  border-radius: 6px;
+  font-weight: 400;
+}
+
+.grid {
+  max-width: 1200px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-sizer {
+  width: 100%;
+}
+
+.grid-item {
+  width: 100%;
+}
+
+.grid-item {
+  float: left;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border: 5px solid #fff;
+  -ms-transition: all 0.35s ease-out 0.35s;
+  /* Safari */
+  -webkit-transition: all 0.35s ease-out 0.35s;
+  /* Safari */
+  transition: all 0.35s ease-out 0.35s;
+  z-index: 99;
+}
+.grid-item:hover {
+  z-index: 100;
+  -ms-transition: all 0.35s ease-out 0.35s;
+  /* Safari */
+  -webkit-transition: all 0.35s ease-out 0.35s;
+  /* Safari */
+  transition: all 0.35s ease-out 0.35s;
+}
+.grid-item:hover .grid-item--desc {
+  background: white;
+  bottom: 0;
+  -ms-transition: all 0.35s ease-out 0.35s;
+  /* Safari */
+  -webkit-transition: all 0.35s ease-out 0.35s;
+  /* Safari */
+  transition: all 0.35s ease-out 0.35s;
+}
+@media screen and (min-width: 48em) {
+  .grid-item:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 5px 0 #001135;
+    border: 0px solid transparent;
+  }
+}
+.grid-item .grid-item--desc {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.86);
+  display: block;
+  margin-bottom: 0;
+  padding: 5px 10px;
+  -ms-transition: all 0.5s ease-out 0.35s;
+  /* Safari */
+  -webkit-transition: all 0.5s ease-out 0.35s;
+  /* Safari */
+  transition: all 0.5s ease-out 0.35s;
+  font-family: "Oswald", arial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.2em;
+  color: #001135;
+  line-height: 1.2em;
+}
+.grid-item .grid-item--desc .grid-item--title {
+  font-family: "Oswald", arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.grid-item.grid-item--height2 {
+  min-height: 500px;
+}
+
+html.touch .grid-item--desc {
+  bottom: 0%;
+}
+
+@media screen and (min-width: 768px) {
+  /* 5 columns for larger screens */
+  .grid-sizer, .grid-item {
+    width: 25%;
+  }
+
+  .grid-item--width2 {
+    width: 50%;
+  }
+
+  .grid-item--width3 {
+    width: 100%;
+  }
+
+  .grid-item--height2 {
+    min-height: 500px;
+  }
+}
+/* LAYOUT
+--------------------------------------------------------------*/
+header {
+  background-color: #124191;
+  position: relative;
+  z-index: 21;
+  padding: 8px 5px;
+  background: #2d68ca;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #2d68ca 0%, #124191 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2d68ca), color-stop(100%, #124191));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #2d68ca 0%, #124191 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #2d68ca 0%, #124191 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #2d68ca 0%, #124191 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #2d68ca 0%, #124191 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+}
+
+.off-canvas-btn {
+  border-radius: 6px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  margin: 15px auto;
+  display: block;
+  font-weight: 400;
+}
+@media screen and (min-width: 48em) {
+  .off-canvas-btn {
+    transform: translateY(30%);
+    float: right;
+    margin: 0;
+  }
+}
+
+#logo {
+  margin: 0;
+  padding: 0;
+  margin-bottom: -11px;
+  max-width: 400px;
+}
+
+#offCanvas {
+  background: #2956a2;
+  height: 100%;
+}
+#offCanvas a {
+  color: #fff;
+  font-size: 1.4em;
+  display: block;
+  width: 100%;
+}
+#offCanvas a:hover {
+  background: #124191;
+  color: #fff;
+}
+#offCanvas .close-button {
+  right: .5rem;
+  top: 0;
+}
+#offCanvas .close-button span {
+  font-size: 1em;
+  color: #fff;
+}
+
+#sorting > .row {
+  max-width: 75rem;
+}
+
+#sorting.stick {
+  position: fixed;
+  width: 100%;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+footer {
+  background-color: #124191;
+  min-height: 50px;
+  margin-top: 25px;
+}
+
+.load-more-btn {
+  display: block;
+  margin: 18px auto;
+  font-size: 1.8em;
+  border-radius: 6px;
+}
+
+/*--------------------------------------------------------------*/

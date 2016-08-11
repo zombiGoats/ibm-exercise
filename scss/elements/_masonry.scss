@@ -1,0 +1,86 @@
+//Masonry
+
+.grid {
+	max-width: 1200px;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	width: 100%;
+}
+
+/* clearfix */
+.grid:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.grid-sizer {
+	width: 100%;
+}
+.grid-item {
+	width: 100%;
+}
+.grid-item {
+	float: left;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	min-height: 250px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	border: 5px solid $white; 
+	@include transitionAll(.35s);
+	z-index: 99; 
+	&:hover {
+		z-index: 100; 
+		@include transitionAll(.35s);
+		.grid-item--desc {background: rgba(255,255,255, 1); bottom: 0; @include transitionAll(.35s);}
+		@media screen and (min-width: $med-screen) {
+			transform: scale(1.1);
+			box-shadow: 2px 2px 5px 0 $black;
+			border: 0px solid transparent;
+		}
+	}
+	.grid-item--desc {
+		position: absolute;
+		bottom: -100%;
+		left: 0;
+		width: 100%;
+		background: rgba(255,255,255, .86);
+		display: block;
+		margin-bottom: 0;
+		padding: 5px 10px;
+		@include transitionAll(.5s);
+		@include lightFont;
+		font-size: 1.2em;
+		color: $black;
+		line-height: 1.2em;
+		.grid-item--title {
+			@include mediumFont;
+		}
+	}
+	&.grid-item--height2 {
+		min-height: 500px;
+	}
+}
+
+html.touch .grid-item--desc {
+	bottom: 0%;
+}
+@media screen and (min-width:768px) {
+
+	/* 5 columns for larger screens */
+	.grid-sizer, .grid-item {
+		width: 25%;
+	}
+	.grid-item--width2 {
+		width: 50%;
+	}
+	.grid-item--width3 {
+		width: 100%;
+	}
+	.grid-item--height2 {
+		min-height: 500px;
+	}
+}

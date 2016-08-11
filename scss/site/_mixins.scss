@@ -1,0 +1,37 @@
+// Animate all properties
+@mixin transitionAll($speed) {
+	-ms-transition: all $speed ease-out .35s; /* Safari */
+	-webkit-transition: all $speed  ease-out .35s; /* Safari */
+    transition: all $speed ease-out .35s;
+}
+
+// Animate all properties
+@mixin transitionHeight($speed) {
+	-ms-transition: max-height $speed; /* Safari */
+	-webkit-transition: max-height $speed; /* Safari */
+	transition: max-height $speed;
+}
+// Animate top properties
+@mixin transitionTop($speed) {
+	-ms-transition: top $speed; /* Safari */
+	-webkit-transition: top $speed; /* Safari */
+	transition: top $speed;
+}
+@mixin verticalAlign {
+	position: relative;
+	top:50%;
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+@mixin linearGradient($top, $bottom){
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}

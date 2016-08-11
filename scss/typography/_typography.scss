@@ -1,0 +1,22 @@
+@import "headings";
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
+$OswaldFont: 'Oswald', arial, sans-serif;
+
+@mixin lightFont {
+	font-family: $OswaldFont;
+	font-weight: 300;
+	font-style: normal;
+}
+
+@mixin regularFont {
+	font-family: $OswaldFont;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin mediumFont {
+	font-family: $OswaldFont;
+	font-weight: 700;
+	font-style: normal;
+}
